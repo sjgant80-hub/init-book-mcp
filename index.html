@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>init-book-mcp</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1e'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' fill='%23b8974a' text-anchor='middle'%3E%E2%97%8A%3C/text%3E%3C/svg%3E">
+<style>
+:root{--void:#1a1a1e;--surface:#2a2a30;--text:#e8e4db;--muted:#928d80;--brass:#b8974a;--line:rgba(232,228,219,.12);--serif:'Libre Baskerville',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--void);color:var(--text);font-family:var(--serif);font-size:16px;line-height:1.7}
+main{max-width:720px;margin:0 auto;padding:3rem 1.5rem 4rem}
+h1{color:var(--brass);letter-spacing:.02em}h2{color:var(--brass);margin-top:2em}
+code,pre{font-family:var(--mono);background:var(--surface);border-radius:6px}
+code{padding:1px 5px;font-size:.88em;color:var(--brass)}pre{padding:14px;overflow-x:auto;font-size:12px}
+table{border-collapse:collapse;width:100%;margin:1em 0}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:.9em}
+th{color:var(--brass);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.dim{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<h1>◊ init-book-mcp</h1>
+<p class="dim">Model Context Protocol server for <strong>INIT · the framework book</strong>. Nine chapters, chapter progress tracker, SVG diagram generators — all exposed as MCP tools.</p>
+
+<h2>Install</h2>
+<pre>npm install -g @ai-native-solutions/init-book-mcp</pre>
+
+<h2>Wire it in</h2>
+<pre>{
+  "mcpServers": {
+    "init-book": { "command": "init-book-mcp" }
+  }
+}</pre>
+
+<h2>Tools</h2>
+<table>
+<tr><th>tool</th><th>args</th><th>returns</th></tr>
+<tr><td><code>initbook_get_chapter</code></td><td><code>{ index }</code></td><td><code>{ title, content, next, prev, callout }</code></td></tr>
+<tr><td><code>initbook_progress</code></td><td><code>{ chapter, position? }</code></td><td><code>{ saved, read, percent }</code></td></tr>
+<tr><td><code>initbook_toc</code></td><td>—</td><td><code>{ chapters, read, percent }</code></td></tr>
+<tr><td><code>initbook_diagram</code></td><td><code>{ name, bloom?, label? }</code></td><td><code>{ name, svg }</code></td></tr>
+</table>
+
+<h2>Resources</h2>
+<ul>
+<li><code>init-book://chapters</code> — full TOC</li>
+<li><code>init-book://diagrams</code> — diagram catalogue</li>
+</ul>
+
+<p class="dim" style="margin-top:3em;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase">v1.0.0 · MIT · AI-Native Solutions</p>
+</main>
+</body>
+</html>
