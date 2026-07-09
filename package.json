@@ -1,43 +1,28 @@
 {
   "name": "@ai-native-solutions/init-book-mcp",
   "version": "1.0.0",
+  "description": "init-book MCP server · stdio wrapper around @ai-native-solutions/init-book-sdk",
   "type": "module",
-  "description": "MCP server for INIT · the framework book · exposes chapter reader, TOC, progress tracker, and inline SVG diagram generators as tools + resources.",
-  "main": "./src/server.js",
+  "main": "src/index.js",
   "bin": {
-    "init-book-mcp": "./src/server.js"
+    "init-book-mcp": "src/index.js"
   },
-  "files": ["src/", "README.md", "LICENSE"],
+  "files": ["src", "README.md", "LICENSE"],
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/index.js"
   },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
-    "@ai-native-solutions/init-book-sdk": "^1.0.0"
-  },
-  "keywords": [
-    "mcp",
-    "model-context-protocol",
-    "init-book",
-    "framework-book",
-    "sovereign",
-    "estate",
-    "ai-native-solutions"
-  ],
+  "keywords": ["init-book", "mcp", "model-context-protocol", "ai-native-solutions"],
   "author": "AI-Native Solutions",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/sjgant80-hub/init-book-mcp.git"
   },
-  "homepage": "https://sjgant80-hub.github.io/init-book-mcp/",
-  "bugs": {
-    "url": "https://github.com/sjgant80-hub/init-book-mcp/issues"
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@ai-native-solutions/init-book-sdk": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
